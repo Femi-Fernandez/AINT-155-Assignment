@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114723942973287290}
   - component: {fileID: 114606423865965848}
   - component: {fileID: 114292800306887892}
+  - component: {fileID: 114335349568578590}
   m_Layer: 0
   m_Name: zombie
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151944604085838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.01, y: 1.79, z: 0}
+  m_LocalPosition: {x: -7.1258955, y: 0.8748097, z: 0}
   m_LocalScale: {x: 0.2464675, y: 0.2464675, z: 0.2464675}
   m_Children: []
   m_Father: {fileID: 0}
@@ -101,6 +102,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b50c3075e29534583b7208845f47b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114335349568578590
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151944604085838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b3de29efe42d5c4e87d0428600c9318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  onSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 114606423865965848}
+        m_MethodName: SetTarget
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
+      PublicKeyToken=null
 --- !u!114 &114606423865965848
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -113,7 +141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  speed: 1
+  speed: 3
 --- !u!114 &114723942973287290
 MonoBehaviour:
   m_ObjectHideFlags: 1

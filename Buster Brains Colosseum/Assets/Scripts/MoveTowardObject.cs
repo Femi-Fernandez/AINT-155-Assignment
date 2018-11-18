@@ -7,7 +7,7 @@ public class MoveTowardObject : MonoBehaviour {
     public float speed = 5.0f;
 	// Use this for initialization
 	void Start () {
-        GameObject go = GameObject.FindGameObjectWithTag("PlayerChar");
+        GameObject go = GameObject.FindGameObjectWithTag("Player");
         target = go.transform;
     }
 	
@@ -15,7 +15,7 @@ public class MoveTowardObject : MonoBehaviour {
 	void Update () {
         if (target != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * 0.01f).normalized;
+            transform.position = Vector3.MoveTowards(transform.position, target.position, speed * 0.01f);
         }
 	}
     public void SetTarget(Transform newTarget)
