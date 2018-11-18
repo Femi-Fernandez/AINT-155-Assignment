@@ -3,7 +3,8 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - PlayerChar
   layers:
   - Default
   - TransparentFX
@@ -13,10 +14,10 @@ TagManager:
   - UI
   - 
   - 
-  - Player
-  - Enemy
-  - Background
-  - 
+  - Player damage
+  - Enemy health
+  - player health
+  - enemy damage
   - 
   - 
   - 
@@ -47,6 +48,12 @@ TagManager:
   - name: Player bullet
     uniqueID: 3888346103
     locked: 0
+  - name: enemy bullet
+    uniqueID: 4162782103
+    locked: 0
   - name: Player
     uniqueID: 2091184027
+    locked: 0
+  - name: enemy
+    uniqueID: 3911219251
     locked: 0
