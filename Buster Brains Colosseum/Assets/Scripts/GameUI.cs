@@ -7,19 +7,23 @@ public class GameUI : MonoBehaviour {
 
     public Slider healthBar;
     public Text scoreText;
+    public Text comboText;
 
     public int playerScore = 0;
+    public int playerCombo = 0;
 
     private void OnEnable()
     {
         Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.onSendScore += UpdateScore;
+        ComboSystem.onSendCombo += UpdateCombo;
     }
 
     private void OnDisable()
     {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.onSendScore -= UpdateScore;
+        ComboSystem.onSendCombo -= UpdateCombo;
     }
 
     private void UpdateHealthBar(int health)
@@ -31,5 +35,10 @@ public class GameUI : MonoBehaviour {
     {
         playerScore += theScore;
         scoreText.text = "Score: " + playerScore.ToString();
+    }
+    private void UpdateCombo(int theCombo)
+    {
+        playerCombo += theCombo;
+        comboText.text = "Combo: " + playerCombo.ToString();
     }
 }
