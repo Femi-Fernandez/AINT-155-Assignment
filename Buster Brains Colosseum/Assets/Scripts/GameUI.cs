@@ -12,24 +12,24 @@ public class GameUI : MonoBehaviour {
 
     private void OnEnable()
     {
-        //Player.OnUpdateHealth += UpdateHealthBar;
+        Player.OnUpdateHealth += UpdateHealthBar;
         AddScore.onSendScore += UpdateScore;
     }
 
     private void OnDisable()
     {
-       // Player.OnUpdateHealth -= UpdateHealthBar;
+        Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.onSendScore -= UpdateScore;
     }
 
     private void UpdateHealthBar(int health)
     {
-       // healthBar.value = health;
+        healthBar.value = health;
     }
 
     private void UpdateScore(int theScore)
     {
         playerScore += theScore;
-        scoreText.text = "SCORE: " + playerScore.ToString();
+        scoreText.text = "Score: " + playerScore.ToString();
     }
 }
