@@ -7,11 +7,11 @@ public class AddScore : MonoBehaviour {
     public delegate void SendScore(int theScore);
     public static event SendScore onSendScore;
 
-    public int score = 10;
+    int score = 10;
 
     public void OnDestroy()
     {
-        if(onSendScore != null)
+        if (onSendScore != null)
         {
             onSendScore(score);
         }

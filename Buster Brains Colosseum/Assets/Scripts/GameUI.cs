@@ -9,8 +9,10 @@ public class GameUI : MonoBehaviour {
     public Text scoreText;
     public Text comboText;
 
-    public int playerScore = 0;
-    public int playerCombo = 0;
+    public int playerScore = 10;
+    public int playerCombo = 1;
+    private float combotimer = 0f;
+    public float comboResetTime = 3f;
 
     private void OnEnable()
     {
@@ -33,12 +35,23 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateScore(int theScore)
     {
-        playerScore += theScore;
-        scoreText.text = "Score: " + playerScore.ToString();
+        playerScore += theScore * playerCombo;
+        combotimer = 0;
+        scoreText.text = "Score: "  +  playerScore.ToString();
     }
     private void UpdateCombo(int theCombo)
     {
         playerCombo += theCombo;
         comboText.text = "Combo: " + playerCombo.ToString();
     }
+
+    private void Update()
+    {
+        combotimer += Time.deltaTime;
+        if (combotimer > comboResetTime)
+        {
+            playerCombo = 1;
+        }
+    }
+
 }

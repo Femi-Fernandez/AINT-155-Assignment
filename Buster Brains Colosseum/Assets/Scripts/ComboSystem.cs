@@ -7,7 +7,7 @@ public class ComboSystem : MonoBehaviour {
     public delegate void SendCombo(int theCombo);
     public static event SendCombo onSendCombo;
 
-    public int combo = 1;
+     int combo = 1;
 
     public void OnDestroy()
     {
