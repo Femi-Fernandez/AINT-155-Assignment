@@ -55,11 +55,11 @@ public class Weapon : MonoBehaviour {
             {
               Fire();
                bulletMagazine = bulletMagazine - 1;
-                if(bulletMagazine == 0)
-                {
-                    emptyMagazine = true;
-                    
-                }
+               // if(bulletMagazine == 0)
+               // {
+               //     emptyMagazine = true;
+               //     
+               // }
             }            
         }
 

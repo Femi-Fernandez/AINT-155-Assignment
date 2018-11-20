@@ -25,9 +25,9 @@ GameObject:
   - component: {fileID: 114723942973287290}
   - component: {fileID: 114606423865965848}
   - component: {fileID: 114292800306887892}
-  - component: {fileID: 114335349568578590}
   - component: {fileID: 114172950262591980}
   - component: {fileID: 114122845290154358}
+  - component: {fileID: 114041023416956898}
   m_Layer: 9
   m_Name: zombie
   m_TagString: Untagged
@@ -149,6 +149,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 3.8}
   m_EdgeRadius: 0
+--- !u!114 &114041023416956898
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151944604085838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 665389eb20137f148a32a51fd61c1de5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114122845290154358
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -186,7 +197,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5a184a405d76a3f4ca633297f187dbb1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  score: 10
 --- !u!114 &114292800306887892
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -198,33 +208,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b50c3075e29534583b7208845f47b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &114335349568578590
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1151944604085838}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b3de29efe42d5c4e87d0428600c9318, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  onSpawn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 114606423865965848}
-        m_MethodName: SetTarget
-        m_Mode: 0
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-    m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
-      PublicKeyToken=null
 --- !u!114 &114606423865965848
 MonoBehaviour:
   m_ObjectHideFlags: 1
