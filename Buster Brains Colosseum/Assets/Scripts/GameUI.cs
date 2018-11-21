@@ -31,6 +31,7 @@ public class GameUI : MonoBehaviour {
     private void UpdateHealthBar(int health)
     {
         healthBar.value = health;
+        playerCombo = 1;
     }
 
     private void UpdateScore(int theScore)
