@@ -675,7 +675,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "Buster Brains \nColliseum"
+  m_Text: "Buster Brains \nColosseum"
 --- !u!222 &1170724085
 CanvasRenderer:
   m_ObjectHideFlags: 0
