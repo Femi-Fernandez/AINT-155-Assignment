@@ -6,26 +6,45 @@ public class EnemySpawner : MonoBehaviour {
 
     public GameObject ZombiePrefab;
     public Transform zombieSpawner;
-    public int respawnTimer = 3;
-    private bool canSpawnEnemy = true;
+    //public int respawnTimer = 3;
+    //private bool canSpawnEnemy = true;
+    public int numOfZombies;
+    public float spawnWait;
+    public float startWait;
+    public float waveWait;
 
 	// Use this for initialization
 	void Start () {
-		
+        StartCoroutine(SpawnZombies());
 	}
 	
-    private IEnumerator Spawnenemy()
+    IEnumerator SpawnZombies ()
     {
-        yield return new WaitForSeconds(respawnTimer);
-        Instantiate(ZombiePrefab, zombieSpawner.position, zombieSpawner.rotation);
-        canSpawnEnemy = true;
-    }
-	// Update is called once per frame
-	void Update () {
-        if (canSpawnEnemy == true)
+        yield return new WaitForSeconds(startWait);
+        while (true)
         {
-            StartCoroutine(Spawnenemy());
-            canSpawnEnemy = false;
+            for (int i = 0; i < numOfZombies; i++)
+            {
+                Instantiate(ZombiePrefab, zombieSpawner.position, zombieSpawner.rotation);
+                yield return new WaitForSeconds(spawnWait);
+            }
+            yield return new WaitForSeconds(waveWait);
         }
-	}
+    }
+
+
+    //private IEnumerator Spawnenemy()
+    //{
+    //    yield return new WaitForSeconds(respawnTimer);
+    //    Instantiate(ZombiePrefab, zombieSpawner.position, zombieSpawner.rotation);
+    //    canSpawnEnemy = true;
+    //}
+	//// Update is called once per frame
+	//void Update () {
+    //    if (canSpawnEnemy == true)
+    //    {
+    //        StartCoroutine(Spawnenemy());
+    //        canSpawnEnemy = false;
+    //    }
+	//}
 }

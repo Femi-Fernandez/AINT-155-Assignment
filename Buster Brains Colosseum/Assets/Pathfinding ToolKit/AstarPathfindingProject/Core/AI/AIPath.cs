@@ -79,7 +79,7 @@ namespace Pathfinding {
 		/// The higher it is, the faster the character will be able to rotate.
 		/// </summary>
 		[UnityEngine.Serialization.FormerlySerializedAs("turningSpeed")]
-		public float rotationSpeed = 0;
+		public float rotationSpeed = 360;
 
 		/// <summary>Distance from the end of the path where the AI will start to slow down</summary>
 		public float slowdownDistance = 0.6F;
