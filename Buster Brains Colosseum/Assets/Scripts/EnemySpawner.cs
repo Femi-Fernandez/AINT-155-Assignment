@@ -29,6 +29,7 @@ public class EnemySpawner : MonoBehaviour {
                 yield return new WaitForSeconds(spawnWait);
             }
             yield return new WaitForSeconds(waveWait);
+            numOfZombies += 1;
         }
     }
 

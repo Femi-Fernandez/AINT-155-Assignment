@@ -8,11 +8,17 @@ public class GameUI : MonoBehaviour {
     public Slider healthBar;
     public Text scoreText;
     public Text comboText;
-
+    public Slider comboBar;
+  
     public int playerScore = 10;
     public int playerCombo = 1;
     private float combotimer = 0f;
-    public float comboResetTime = 3f;
+    public float comboResetTime = 1.5f;
+
+    private void start()
+    {
+        comboBar.value = 0;
+    }
 
     private void OnEnable()
     {
@@ -37,7 +43,7 @@ public class GameUI : MonoBehaviour {
     private void UpdateScore(int theScore)
     {
         playerScore += theScore * playerCombo;
-        combotimer = 0;
+        combotimer = comboResetTime;
         scoreText.text = "Score: "  +  playerScore.ToString();
     }
     private void UpdateCombo(int theCombo)
@@ -48,8 +54,9 @@ public class GameUI : MonoBehaviour {
 
     private void Update()
     {
-        combotimer += Time.deltaTime;
-        if (combotimer > comboResetTime)
+        comboBar.value = combotimer;
+        combotimer -= Time.deltaTime;
+        if (0 > combotimer)
         {
             playerCombo = 1;
         }
