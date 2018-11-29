@@ -23,7 +23,6 @@ public class HealthSystem : MonoBehaviour {
         if (health < 1)
         {
             onDie.Invoke();
-            Instantiate(starPickup);
            // print("test");
         }
     }

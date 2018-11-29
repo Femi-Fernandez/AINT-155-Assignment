@@ -25,6 +25,7 @@ GameObject:
   - component: {fileID: 114114031814315336}
   - component: {fileID: 114277545078849176}
   - component: {fileID: 114580887721252788}
+  - component: {fileID: 114627154951588478}
   m_Layer: 11
   m_Name: score pickup
   m_TagString: Untagged
@@ -39,7 +40,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1746057783915418}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.722, y: -2.185, z: 0}
+  m_LocalPosition: {x: -3.670075, y: -1.1483539, z: 0}
   m_LocalScale: {x: 0.17876989, y: 0.16875039, z: 0.26665062}
   m_Children: []
   m_Father: {fileID: 0}
@@ -112,6 +113,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15790c12eb7338249892b909225c61e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Zombie: {fileID: 0}
 --- !u!114 &114580887721252788
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -123,6 +125,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d9b50c3075e29534583b7208845f47b9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114627154951588478
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1746057783915418}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5236973fb2e1654bb8e63b965c5c2fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 0}
+  speed: 5
 --- !u!212 &212280203222687676
 SpriteRenderer:
   m_ObjectHideFlags: 1
