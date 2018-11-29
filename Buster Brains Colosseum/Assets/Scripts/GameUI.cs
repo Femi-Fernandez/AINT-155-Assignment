@@ -43,12 +43,13 @@ public class GameUI : MonoBehaviour {
     private void UpdateScore(int theScore)
     {
         playerScore += theScore * playerCombo;
-        combotimer = comboResetTime;
+        
         scoreText.text = "Score: "  +  playerScore.ToString();
     }
     private void UpdateCombo(int theCombo)
     {
         playerCombo += theCombo;
+        combotimer = comboResetTime;
         comboText.text = "Combo: " + playerCombo.ToString();
     }
 
@@ -59,6 +60,7 @@ public class GameUI : MonoBehaviour {
         if (0 > combotimer)
         {
             playerCombo = 1;
+            comboText.text = "Combo: " + playerCombo.ToString();
         }
     }
 

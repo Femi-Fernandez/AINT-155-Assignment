@@ -11,6 +11,7 @@ public class HealthSystem : MonoBehaviour {
 
     public int health = 10;
     public UnityEvent onDie;
+    public GameObject starPickup;
     public OnDamagedEvent onDamaged;
 
     public void TakeDamage(int Damage)
@@ -22,6 +23,7 @@ public class HealthSystem : MonoBehaviour {
         if (health < 1)
         {
             onDie.Invoke();
+            Instantiate(starPickup);
            // print("test");
         }
     }
