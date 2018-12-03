@@ -6,7 +6,6 @@ public class Player : MonoBehaviour {
 
     public delegate void UpdateHealth(int newHealth);
     public static event UpdateHealth OnUpdateHealth;
-
     private Animator gunAnim;
 
 	// Use this for initialization
@@ -33,4 +32,6 @@ public class Player : MonoBehaviour {
             OnUpdateHealth(health);
         }
     }
+
+
 }

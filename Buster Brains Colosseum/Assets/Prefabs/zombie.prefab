@@ -32,9 +32,10 @@ GameObject:
   - component: {fileID: 114039492547010836}
   - component: {fileID: 114911472465986952}
   - component: {fileID: 114472968435049186}
+  - component: {fileID: 114843607527391624}
   m_Layer: 9
   m_Name: zombie
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -63,7 +64,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151944604085838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.993447, y: 0.48386446, z: 0}
+  m_LocalPosition: {x: -4.7909493, y: -3.6546097, z: 0}
   m_LocalScale: {x: 0.2464675, y: 0.2464675, z: 0.2464675}
   m_Children:
   - {fileID: 4800662259744832}
@@ -346,6 +347,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 114843607527391624}
+        m_MethodName: Spawn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
   onDamaged:
@@ -353,6 +365,20 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: OnDamagedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114843607527391624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151944604085838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f1f8f3f247fb2044ea52c4ac66735e5f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  prefabToSpawn: {fileID: 1746057783915418, guid: 21ef911a1a981db438cdb21e8abc57d7,
+    type: 2}
+  adjustmentAngle: 0
 --- !u!114 &114911472465986952
 MonoBehaviour:
   m_ObjectHideFlags: 1
