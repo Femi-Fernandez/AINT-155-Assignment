@@ -19,6 +19,7 @@ public class Weapon : MonoBehaviour {
     public int bulletMagazine = 30;
     public float reloadTime = 1.5f;
     public bool emptyMagazine = false;
+    private bool reloading = false;
 
     private bool isFiring = false;
 	// Use this for initialization
@@ -43,29 +44,31 @@ public class Weapon : MonoBehaviour {
     {
             yield return new WaitForSeconds(reloadTime);   
             bulletMagazine = 30;       
-            emptyMagazine = false;  
+            emptyMagazine = false;
+        reloading = false;
         
     }
 //    Update is called once per frame
 	void Update () {
         
-        if (Input.GetMouseButton(0) && !emptyMagazine)
+        if (Input.GetMouseButton(0) && !emptyMagazine && !reloading)
         {
             if (!isFiring)
             {
               Fire();
                bulletMagazine = bulletMagazine - 1;
-               // if(bulletMagazine == 0)
-               // {
-               //     emptyMagazine = true;
-               //     
-               // }
+                if(bulletMagazine == 0)
+                {
+                    emptyMagazine = true;
+                    
+                }
             }            
         }
 
 
-        if (Input.GetKeyDown("r"))
+        if (Input.GetKeyDown("r") && !reloading)
         {
+            reloading = true;
             StartCoroutine(ReloadGun());
           //  onReload.Invoke(true);
         }
