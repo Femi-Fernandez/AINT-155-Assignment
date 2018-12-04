@@ -22,7 +22,7 @@ public class HealthSystem : MonoBehaviour {
         if (health < 1)
         {
             onDie.Invoke();
-           // print("test");
+           
         }
     }
 }

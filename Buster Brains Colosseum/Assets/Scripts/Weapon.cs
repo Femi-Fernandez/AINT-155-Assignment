@@ -1,14 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-//using UnityEngine.Events;
+using UnityEngine.Events;
 
 
 //[System.Serializable]
 //public class onReloadEvent : UnityEvent<bool> { }
 public class Weapon : MonoBehaviour {
     
-//    public onReloadEvent onReload;
+    public UnityEvent onReload;
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -45,7 +45,7 @@ public class Weapon : MonoBehaviour {
             yield return new WaitForSeconds(reloadTime);   
             bulletMagazine = 30;       
             emptyMagazine = false;
-        reloading = false;
+            reloading = false;
         
     }
 //    Update is called once per frame
@@ -70,7 +70,8 @@ public class Weapon : MonoBehaviour {
         {
             reloading = true;
             StartCoroutine(ReloadGun());
-          //  onReload.Invoke(true);
+            onReload.Invoke();
+            //  onReload.Invoke(true);
         }
 
     }
