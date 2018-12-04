@@ -20,7 +20,6 @@ public class invincibleOnHit : MonoBehaviour {
     {
         yield return new WaitForSeconds(invincibility_timer);
         player_collider.enabled = !player_collider.enabled;
-        Debug.Log("got to stage 2");
         invincible = false;
 
     }
@@ -30,7 +29,6 @@ public class invincibleOnHit : MonoBehaviour {
    
         if (invincible == false)
         {
-            Debug.Log("got to stage 1");
             invincible = true;
             player_collider.enabled = !player_collider.enabled;
 
