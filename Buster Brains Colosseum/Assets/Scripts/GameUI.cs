@@ -69,7 +69,6 @@ public class GameUI : MonoBehaviour {
 
         if (reloading == true)
         {
-            Debug.Log("got here");
             reloadTimer.fillAmount -= 1.0f / reloadTime * Time.deltaTime;
         }
     }
