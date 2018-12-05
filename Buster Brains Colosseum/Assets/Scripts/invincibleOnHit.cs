@@ -26,9 +26,10 @@ public class invincibleOnHit : MonoBehaviour {
 
     public void Onhit()
     {
-   
+        
         if (invincible == false)
         {
+            
             invincible = true;
             player_collider.enabled = !player_collider.enabled;
 
