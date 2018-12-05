@@ -6,7 +6,8 @@ using UnityEngine.Events;
 
 //[System.Serializable]
 //public class onReloadEvent : UnityEvent<bool> { }
-public class Weapon : MonoBehaviour {
+public class Weapon : WeaponBase
+{
     
     public UnityEvent onReload;
 
@@ -19,7 +20,7 @@ public class Weapon : MonoBehaviour {
     public int bulletMagazine = 30;
     public float reloadTime = 1.5f;
     public bool emptyMagazine = false;
-    private bool reloading = false;
+
 
     private bool isFiring = false;
 	// Use this for initialization
@@ -48,8 +49,9 @@ public class Weapon : MonoBehaviour {
             reloading = false;
         
     }
-//    Update is called once per frame
-	void Update () {
+
+    //    Update is called once per frame
+    void Update () {
         
         if (Input.GetMouseButton(0) && !emptyMagazine && !reloading)
         {
@@ -65,9 +67,9 @@ public class Weapon : MonoBehaviour {
             }            
         }
 
-
         if (Input.GetKeyDown("r") && !reloading)
         {
+            emptyMagazine = true;
             reloading = true;
             StartCoroutine(ReloadGun());
             onReload.Invoke();

@@ -10,6 +10,7 @@ public class GameUI : MonoBehaviour {
     public Text comboText;
     public Slider comboBar;
     public Image reloadTimer;
+    public Text ZombieCounterText;
   
     public int playerScore = 10;
     public int playerCombo = 1;
@@ -17,6 +18,7 @@ public class GameUI : MonoBehaviour {
     public float comboResetTime = 1.5f;
     public float reloadTime = 1.5f;
     public bool reloading = false;
+    private GameObject[] getCount;
 
     private void start()
     {
@@ -71,8 +73,18 @@ public class GameUI : MonoBehaviour {
         {
             reloadTimer.fillAmount -= 1.0f / reloadTime * Time.deltaTime;
         }
+
+
+        
+        getCount = GameObject.FindGameObjectsWithTag("Enemy");
+        int count = getCount.Length;
+
+        ZombieCounterText.text = "Zombies alive: " + count;
+
+
     }
-    public void reloadtimerCountdown()
+
+public void reloadtimerCountdown()
     {
         reloading = true;
         reloadTimer.fillAmount = 1.0f;

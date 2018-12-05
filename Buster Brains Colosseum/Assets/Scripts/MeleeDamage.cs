@@ -7,6 +7,7 @@ public class MeleeDamage : MonoBehaviour {
     public float moveSpeed = 0.0f;
     public int damage = 1;
     public float swingtime = 0.1f;
+
     // Use this for initialization
     void Start()
     {
@@ -17,13 +18,14 @@ public class MeleeDamage : MonoBehaviour {
     private void OnTriggerEnter2D(Collider2D other)
     {
         other.transform.SendMessage("TakeDamage", damage, SendMessageOptions.DontRequireReceiver);
-        
+
     }
 
 
     private IEnumerator meleeDie()
     {
         yield return new WaitForSeconds(swingtime);
+
         Die();
     }
 
