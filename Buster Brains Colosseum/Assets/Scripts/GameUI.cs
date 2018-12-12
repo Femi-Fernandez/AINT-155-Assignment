@@ -11,6 +11,8 @@ public class GameUI : MonoBehaviour {
     public Slider comboBar;
     public Image reloadTimer;
     public Text ZombieCounterText;
+    public Image playerHealth;
+
   
     public int playerScore = 10;
     public int playerCombo = 1;
@@ -42,8 +44,11 @@ public class GameUI : MonoBehaviour {
 
     private void UpdateHealthBar(int health)
     {
-        healthBar.value = health;
-        playerCombo = 1;
+        float healthtofloat = (float)health;
+        float imagefill = (healthtofloat / 100);
+        print(imagefill);
+        print(health);
+        playerHealth.fillAmount = imagefill;
     }
 
     private void UpdateScore(int theScore)
