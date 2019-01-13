@@ -14,7 +14,7 @@ public class Weapon : WeaponBase
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
     public float fireTime = 0.5f;
-
+    public Animator animator;
 
 
     public int bulletMagazine = 30;
@@ -23,17 +23,22 @@ public class Weapon : WeaponBase
 
 
     private bool isFiring = false;
-	// Use this for initialization
-	private void SetFiring()
+    // Use this for initialization
+    private void Start()
+    {
+       
+    }
+    private void SetFiring()
     {
         isFiring = false;
+        animator.SetBool("fire", false);
     }
 	
     private void Fire()
     {
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
-
+        animator.SetBool("fire", true);
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();
@@ -54,11 +59,12 @@ public class Weapon : WeaponBase
     void Update () {
         
         if (Input.GetMouseButton(0) && !emptyMagazine && !reloading)
-        {
+        {    
             if (!isFiring)
             {
-              Fire();
-               bulletMagazine = bulletMagazine - 1;
+                Fire();
+
+                bulletMagazine = bulletMagazine - 1;
                 if(bulletMagazine == 0)
                 {
                     emptyMagazine = true;
