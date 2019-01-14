@@ -33,6 +33,8 @@ GameObject:
   - component: {fileID: 114911472465986952}
   - component: {fileID: 114472968435049186}
   - component: {fileID: 114843607527391624}
+  - component: {fileID: 95295193757019466}
+  - component: {fileID: 114626413105035604}
   m_Layer: 9
   m_Name: zombie
   m_TagString: Enemy
@@ -64,7 +66,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1151944604085838}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.7909493, y: -3.6546097, z: 0}
+  m_LocalPosition: {x: -3.9850883, y: 0.06540471, z: 0}
   m_LocalScale: {x: 0.2464675, y: 0.2464675, z: 0.2464675}
   m_Children:
   - {fileID: 4800662259744832}
@@ -154,6 +156,24 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 2.5, y: 3.8}
   m_EdgeRadius: 0
+--- !u!95 &95295193757019466
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151944604085838}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fdb6c5fecac753842a1b12c87f02d794, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!114 &114039492547010836
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -310,6 +330,19 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: EnemySpawnedEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+--- !u!114 &114626413105035604
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1151944604085838}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03f7159199a675746950d8079d1d2fbc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 95295193757019466}
+  spriteRenderer: {fileID: 212190940408079480}
 --- !u!114 &114723942973287290
 MonoBehaviour:
   m_ObjectHideFlags: 1
