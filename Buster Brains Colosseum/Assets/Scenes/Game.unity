@@ -877,7 +877,7 @@ MonoBehaviour:
   theCamera: {fileID: 519420031}
   smoothing: 500
   adjustmentAngle: -90
-  spriteRenderer: {fileID: 0}
+  rotz: 0
 --- !u!95 &891851958
 Animator:
   serializedVersion: 3
@@ -2290,7 +2290,7 @@ MonoBehaviour:
   theCamera: {fileID: 519420031}
   smoothing: 500
   adjustmentAngle: -90
-  spriteRenderer: {fileID: 0}
+  rotz: 0
 --- !u!212 &1195478451
 SpriteRenderer:
   m_ObjectHideFlags: 0
