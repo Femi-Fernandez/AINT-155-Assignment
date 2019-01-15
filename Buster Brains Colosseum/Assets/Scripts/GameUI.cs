@@ -12,6 +12,7 @@ public class GameUI : MonoBehaviour {
     public Image reloadTimer;
     public Text ZombieCounterText;
     public Image playerHealth;
+    public Text BulletCount;
 
   
     public int playerScore = 10;
@@ -21,11 +22,13 @@ public class GameUI : MonoBehaviour {
     public float reloadTime = 1.5f;
     public bool reloading = false;
     private GameObject[] getCount;
+    public int bulletcount = 30;
 
     private void start()
     {
         comboBar.value = 0;
-        reloadTimer.fillAmount = 0.0f;
+        reloadTimer.fillAmount = 1.0f;
+        bulletcount = 30;
     }
 
     private void OnEnable()
@@ -76,23 +79,31 @@ public class GameUI : MonoBehaviour {
 
         if (reloading == true)
         {
-            reloadTimer.fillAmount += 1.0f / reloadTime * Time.deltaTime;
+            reloadTimer.fillAmount += 1.0f / reloadTime * Time.deltaTime;   
         }
-
-
-        
+  
         getCount = GameObject.FindGameObjectsWithTag("Enemy");
         int count = getCount.Length;
 
         ZombieCounterText.text = "Zombies alive: " + count;
-
-
     }
 
-public void reloadtimerCountdown()
+    public void BulletCounterReset()
+    {
+        bulletcount = 30;
+        BulletCount.text = bulletcount + "/30 bullets left.";
+    }
+
+    public void BulletCounter()
+    {
+        bulletcount = bulletcount - 1;
+        BulletCount.text = bulletcount + "/30 bullets left.";
+    }
+
+    public void reloadtimerCountdown()
     {
         reloading = true;
-        reloadTimer.fillAmount = .0f;
+        reloadTimer.fillAmount = 0.0f;
     }
 
 }

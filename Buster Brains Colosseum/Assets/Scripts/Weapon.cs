@@ -10,6 +10,7 @@ public class Weapon : WeaponBase
 {
     
     public UnityEvent onReload;
+    public UnityEvent onFire;
 
     public GameObject bulletPrefab;
     public Transform bulletSpawn;
@@ -39,6 +40,9 @@ public class Weapon : WeaponBase
         isFiring = true;
         Instantiate(bulletPrefab, bulletSpawn.position, bulletSpawn.rotation);
         animator.SetBool("fire", true);
+
+        onFire.Invoke();
+
         if (GetComponent<AudioSource>() != null)
         {
             GetComponent<AudioSource>().Play();
