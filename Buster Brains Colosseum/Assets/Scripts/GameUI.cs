@@ -76,7 +76,7 @@ public class GameUI : MonoBehaviour {
 
         if (reloading == true)
         {
-            reloadTimer.fillAmount -= 1.0f / reloadTime * Time.deltaTime;
+            reloadTimer.fillAmount += 1.0f / reloadTime * Time.deltaTime;
         }
 
 
@@ -92,7 +92,7 @@ public class GameUI : MonoBehaviour {
 public void reloadtimerCountdown()
     {
         reloading = true;
-        reloadTimer.fillAmount = 1.0f;
+        reloadTimer.fillAmount = .0f;
     }
 
 }
