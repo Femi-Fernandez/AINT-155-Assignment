@@ -43,6 +43,7 @@ public class GameUI : MonoBehaviour {
         Player.OnUpdateHealth -= UpdateHealthBar;
         AddScore.onSendScore -= UpdateScore;
         ComboSystem.onSendCombo -= UpdateCombo;
+        PlayerPrefs.SetInt("Score", playerScore);
     }
 
     private void UpdateHealthBar(int health)

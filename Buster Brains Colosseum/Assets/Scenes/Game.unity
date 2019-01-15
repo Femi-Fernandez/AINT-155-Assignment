@@ -233,6 +233,7 @@ MonoBehaviour:
   reloadTimer: {fileID: 1383658062}
   ZombieCounterText: {fileID: 1421523663}
   playerHealth: {fileID: 1271136281}
+  BulletCount: {fileID: 610413491}
   playerScore: 0
   playerCombo: 0
   comboResetTime: 2.5
@@ -323,6 +324,17 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 1839799651}
         m_MethodName: Die
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 322271464}
+        m_MethodName: GameOver
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -553,7 +565,7 @@ GameObject:
   - component: {fileID: 597714590}
   - component: {fileID: 597714589}
   m_Layer: 5
-  m_Name: bullet counter (1)
+  m_Name: info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -574,8 +586,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 261.3, y: 23.18}
-  m_SizeDelta: {x: 327.8, y: 31.2}
+  m_AnchoredPosition: {x: 251.4, y: 33.07}
+  m_SizeDelta: {x: 327.8, y: 46.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &597714589
 MonoBehaviour:
@@ -610,6 +622,7 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: 'R: Reload
+
 
     1: gun 2: melee'
 --- !u!222 &597714590
@@ -650,7 +663,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 264.6, y: 59.3}
+  m_AnchoredPosition: {x: 251.4, y: 71.7}
   m_SizeDelta: {x: 327.8, y: 22.950012}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &610413491
@@ -952,6 +965,33 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 61085299}
         m_MethodName: reloadtimerCountdown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 61085299}
+        m_MethodName: BulletCounterReset
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  onFire:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 61085299}
+        m_MethodName: BulletCounter
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
